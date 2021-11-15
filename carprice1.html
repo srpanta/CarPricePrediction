@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API FOR CAR PRICE PREDICTION MODIFIED</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+<style>
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+</style>
+
+<body>
+    <div style = "color:blue">
+        <form action="{{url_for('predict')}}" method = "post">
+            <h2>Predictive Analysis for CAR PRICE PREDICTION MODIFIED</h2>
+            <h3>What is the cylinder number?</h3><br><select name = "Cylinder Number" id = "cylinder" required="required">
+                <option value = "Two">Two</option>
+                <option value = "Three">Three</option>
+                <option value = "Four">Four</option>
+                <option value = "Five">Five</option>
+                <option value = "Six">Six</option>
+                <option value = "Eight">Eight</option>
+                <option value = "Twelve">Twelve</option>
+                </select>
+            <h3>What is the engine size?(Range: 61-326)</h3><br><input id="first" name="Engine Size" required="required">
+            <h3>What is the curbweight?(Range:1488-4066)</h3><br><input id="second" name="Curbe Weight" required="required">
+            <h3>What is the boreratio?(Range: 2.54-3.94)</h3><br><input id="third" name="Bore Ratio" required="required">
+            <h3>What is the car width?(Range: 60.3-72.3)</h3><br><input id="fifth" name="Car Width" required="required">
+            <h3>What is the horsepower?(Range: 48-288)</h3><br><input id="fourth" name="Horsepower" required="required">
+            <h3>What is the highway MPG?(Range: 16-54)</h3><br><input id="sixth" name="Highway MPG" required="required">
+            <h3>What is the drive wheel?</h3><br><select name = "Drive Wheel" id = "drivewheel" required="required">
+                <option value = "Forward"> Forward</option>
+                <option value = "Rear"> Rear</option>
+            </select>
+            <h3>What is the car length?(Range: 141-208)</h3><br><input id="seventh" name="Car Length" required="required">
+            <h3>What is the fuel system?</h3><br><select name = "Fuel System" id = "fuelsystem" required="required">
+                <option value = "mpfi"> mpfi</option> 
+                <option value = "2bbl"> 2bbl</option>
+                <option value = "mfi"> mfi</option>
+                <option value = "1bbl"> 1bbl</option>
+                <option value = "spfi"> spfi</option>
+                <option value = "4bbl"> 4bbl</option>
+                <option value = "idi"> idi</option>
+                <option value = "spdi"> spdi</option>
+            </select> 
+
+            <br><br><button id='sub' type='submit'> Calculate the selling price.>
+            <br>
+      </form>
+   <br>
+   <br>
+   {{prediction_text}}
+
+ </div>
+
+
+</body>
+</html>
