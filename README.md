@@ -8,4 +8,4 @@ I used random forest regression model here.
 ### Cross validation
 RandomizedsearchCV is used for cross validation.
 ### Performance metric
-R2 score is used to measure the performance metric.
+R2 score is used to measure the performance of the model.
